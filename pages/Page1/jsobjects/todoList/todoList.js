@@ -24,8 +24,7 @@ export default {
 
 	getTodaysTasks: async () => {
 		const allTasks = await getAllTasks.run()
-		const today = new Date().toISOString().slice(0, 10) // Extract YYYY-MM-DD part
-		const todaysTasks = allTasks.filter((task) => task.created_at.startsWith(today))
+		const todaysTasks = allTasks.filter((task) => moment(task.created_at).isSame(new Date(), "day"))
 		const incompleteTasks = todaysTasks.filter((t) => t.is_complete === false)
 		incompleteTasks.sort((a, b) => b.created_at.localeCompare(a.created_at))
 		return incompleteTasks

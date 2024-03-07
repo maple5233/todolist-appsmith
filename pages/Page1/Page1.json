@@ -70,7 +70,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  const allTasks = await getAllTasks.run();\n  const today = new Date().toISOString().slice(0, 10);\n  const todaysTasks = allTasks.filter(task => task.created_at.startsWith(today));\n  const incompleteTasks = todaysTasks.filter(t => t.is_complete === false);\n  incompleteTasks.sort((a, b) => b.created_at.localeCompare(a.created_at));\n  return incompleteTasks;\n}"
+                "async () => {\n  const allTasks = await getAllTasks.run();\n  const todaysTasks = allTasks.filter(task => moment(task.created_at).isSame(new Date(), \"day\"));\n  const incompleteTasks = todaysTasks.filter(t => t.is_complete === false);\n  incompleteTasks.sort((a, b) => b.created_at.localeCompare(a.created_at));\n  return incompleteTasks;\n}"
               ],
               "timeoutInMillisecond": 10000
             }

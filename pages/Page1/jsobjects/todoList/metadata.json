@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "todoList",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "listState",
+        "value": "'today'"
+      },
+      {
+        "name": "selectedTask",
+        "value": "undefined"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Page1_todoList",
+  "deleted": false,
+  "gitSyncId": "65e92ee31603c0605cdcc759_65e964f57a22461c4f580c30"
+}

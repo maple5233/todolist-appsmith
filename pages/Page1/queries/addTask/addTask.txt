@@ -1,0 +1,11 @@
+INSERT INTO public.todo_task
+("title", "priority", "is_complete", "deadline", "comment", "status")
+VALUES
+(
+	{{formTaskTitle.text}}, 
+	{{formTaskPriority.selectedOptionValue}}, 
+	false,
+	{{formTaskDeadline.formattedDate}},
+	'',
+	'pending'
+);

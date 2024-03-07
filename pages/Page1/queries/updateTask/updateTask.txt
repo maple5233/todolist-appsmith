@@ -1,0 +1,8 @@
+UPDATE public.todo_task
+SET
+	title = {{formTaskTitle.text}},
+  priority = {{formTaskPriority.selectedOptionValue}},
+	deadline = {{formTaskDeadline.formattedDate}},
+	updated_at = {{new Date().toISOString()}}
+WHERE
+  id = {{todoList.selectedTask?.id ?? -1}}

@@ -61,7 +61,6 @@ export default {
 		await this.getPendingTasks()
 		await this.getCompletedTasks()
 		await this.getOvertimeTasks()
-		console.log(this.getCompletedTasks.data)
 	},
 
 	addTask: async () => {
